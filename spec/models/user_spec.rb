@@ -1,5 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "has a name" do
+    user = User.create(name: "dude")
+    expect(user.name).to eq("dude")
+  end
+
+  it "has a description" do
+    user = User.create(description: "looking for a pair ya know")
+    expect(user.description).to eq("looking for a pair ya know")
+  end
+
+  it "has an image" do
+    user = User.create(image: "image.com")
+    expect(user.image).to eq("image.com")
+  end
 end
