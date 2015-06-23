@@ -15,4 +15,9 @@ RSpec.describe User, type: :model do
     user = User.create(image: "image.com")
     expect(user.image).to eq("image.com")
   end
+
+  it "has an uid" do
+    user = User.create(uid: 9)
+    expect(user.uid).to eq(9)
+  end
 end
