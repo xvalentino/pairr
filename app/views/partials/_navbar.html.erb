@@ -1,0 +1,17 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo">Pairr</a>
+
+    <% if current_user %>
+      <ul class="right hide-on-med-and-down">
+        <li>(Logged in as <%= current_user.name %>)</li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    <% else %>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/auth/github">Login</a></li>
+      </ul>
+    <% end %>
+
+  </div>
+</nav>
