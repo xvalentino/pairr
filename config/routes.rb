@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'dashboard/home'
-
   root to: "dashboard#home"
+
+  get "/auth/github/callback", to: "sessions#create"
 end
