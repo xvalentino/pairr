@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20150623203234) do
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
+    t.integer  "uid"
     t.string   "name"
     t.string   "image"
     t.string   "description"
