@@ -13,10 +13,12 @@ class Pair < ActiveRecord::Base
   def up
     self.status += 1
     self.count += 1
+    self.save
   end
 
   def down
     self.status = 0
     self.count += 1
+    self.save
   end
 end

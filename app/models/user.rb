@@ -4,6 +4,22 @@ class User < ActiveRecord::Base
   has_many :languages, through: :user_languages
   has_many :potential_matches, through: :pairs, class_name: 'User', foreign_key: 'potential_match_id'
 
+  def matches
+    referenced_relationships = Pair.includes(:potential_match).where(potential_match_id: id).where(status: 2)
+    owned_relationships = Pair.includes(:user).where(user_id: id).where(status: 2)
+    matches = referenced_relationships + owned_relationships
+    turn_to_user_matches(matches)
+  end
+
+  def turn_to_user_matches(pairs)
+    pairs.map do |pair|
+      if pair.user_id == id
+        pair.potential_match
+      else
+        pair.user
+      end
+    end
+  end
 
   def random_user
     (matches_that_other_people_started + not_attempted_with.shuffle).first
@@ -11,6 +27,7 @@ class User < ActiveRecord::Base
 
   def matches_that_other_people_started
     associated_pairs = Pair.includes(:user).where(potential_match_id: id)
+    associated_pairs = associated_pairs.select {|pair| pair.count != 2 }
     turn_to_users(associated_pairs)
   end
 
