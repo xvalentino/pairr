@@ -20,4 +20,9 @@ RSpec.describe User, type: :model do
     user = User.create(uid: 9)
     expect(user.uid).to eq(9)
   end
+
+  it "knows" do
+    user = User.create!
+    user.attempted_with
+  end
 end

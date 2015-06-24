@@ -1,0 +1,8 @@
+<p><%= @random_user.name %></p>
+<p><%= @random_user.description %></p>
+<ul>
+  <% @random_user.languages.each do |lang| %>
+    <p> <%= lang.name %></p>
+  <% end %>
+</ul>
+
