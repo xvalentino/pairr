@@ -5,4 +5,6 @@
     <p> <%= lang.name %></p>
   <% end %>
 </ul>
+<%= button_to "Approve", "/match/#{@random_user.id}/up" %>
+<%= button_to "Reject", "/match/#{@random_user.id}/down" %>
 

@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150624100642) do
     t.integer  "user_id"
     t.integer  "potential_match_id"
     t.integer  "status",             default: 0
+    t.integer  "count",              default: 0
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
