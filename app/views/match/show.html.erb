@@ -8,7 +8,9 @@
     <% end %>
   </ul>
   <div class="row">
-    <%= button_to "Approve", "/match/#{@random_user.id}/up", class: "waves-effect waves-light btn" %>
-    <%= button_to "Reject", "/match/#{@random_user.id}/down", class: "waves-effect red btn" %>
+    <% if @random_user.id %>
+      <%= button_to "Approve", "/match/#{@random_user.id}/up", class: "waves-effect waves-light btn" %>
+      <%= button_to "Reject", "/match/#{@random_user.id}/down", class: "waves-effect red btn" %>
+    <% end %>
   </div>
 </div>
