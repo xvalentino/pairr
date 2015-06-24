@@ -1,4 +1,29 @@
-<%= link_to "Find Pairs", match_path %>
-<% @matches.each do |user| %>
-  <p> <%= user.name %></p>
-<% end %>
+<div class="center-align">
+  <br/>
+  <%= link_to "Find Pairs", match_path, class: "waves-effect waves-light btn-large" %>
+</div>
+
+<div class="container">
+  <h1>Users You Matched With</h1>
+  <% @matches.each do |user| %>
+    <div class="row">
+      <div class="col s12 m12">
+        <div class="card center-align">
+          <img src=<%= user.image %>>
+          <div class="card-content">
+            <h1><%= user.name %></h1>
+            <%= user.description %>
+            <br/>
+            <br/>
+            <h4>Languages:</h4>
+            <ul>
+              <% user.languages.each do |lang| %>
+                <li><%= lang.name %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

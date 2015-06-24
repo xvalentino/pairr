@@ -44,8 +44,8 @@ class Seed
   end
 
   def add_languages_to_users
-    num = Random.rand(10)
     User.all.each do |user|
+    num = Random.rand(10)
       user.languages << Language.all.sample(num)
       puts "#{user.name} likes #{num} languages"
     end
