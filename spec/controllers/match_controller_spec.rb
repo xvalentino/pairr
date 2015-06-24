@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe MatchController, type: :controller do
 
   describe "GET #show" do
-    xit "returns http success" do
+    it "returns http redirect" do
       get :show
-      expect(response).to have_http_status(:success)
+      expect(response).to have_http_status(302)
     end
   end
 
