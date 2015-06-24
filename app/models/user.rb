@@ -6,7 +6,12 @@ class User < ActiveRecord::Base
 
 
   def random_user
-    (attempted_with + not_attempted_with.shuffle).first
+    (matches_that_other_people_started + not_attempted_with.shuffle).first
+  end
+
+  def matches_that_other_people_started
+    associated_pairs = Pair.includes(:user).where(potential_match_id: id)
+    turn_to_users(associated_pairs)
   end
 
   def not_attempted_with
