@@ -9,3 +9,17 @@ ITERATION 2: FIND PAIRS BUTTON
              NEXT POTENTIAL USER IS SHOWN
 ITERATION 3: PENDING MATCHES ARE SHOWN FIRST
 ITERATION 4: TWO YESS ARE SHOWN ON DASHBOARD
+
+USER -----------Pair------------ USER
+        user_id      user_id
+match=     yes        yes
+not_match= no         yes
+not_match= yes        no
+
+PAIR
+first_user_id
+second_user_id
+first_user_answer
+second_user_answer
+
+Pair cannot be duplicated
