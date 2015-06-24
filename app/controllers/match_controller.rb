@@ -1,6 +1,6 @@
 class MatchController < ApplicationController
   def show
-    @random_user = current_user.random_user || User.new(name: "THERE ARE NO MORE PEOPLE IN THIS APP FOR YOU.")
+    @random_user = current_user.queue || User.new(name: "THERE ARE NO MORE PEOPLE IN THIS APP FOR YOU.")
   end
 
   def update

@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  def random_user
+  def queue
     (matches_that_other_people_started + not_attempted_with.shuffle).first
   end
 
