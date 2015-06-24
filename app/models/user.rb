@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :potential_matches, through: :pairs, class_name: 'User', foreign_key: 'potential_match_id'
 
   def not_attempted_with
-    User.all.select {|user| !attempted_with.include?(user)}
+    User.all.select {|user| !attempted_with.include?(user) && user != self }
   end
 
   def attempted_with
