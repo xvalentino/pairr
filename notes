@@ -1,13 +1,5 @@
-ITERATION 2: FIND PAIRS BUTTON 
-             SHOW RANDOM OTHERS USERS PROFILE (HAVENT BEEN MATCHED WITH)
-               *name
                *pic
-               *languages
-               *description
-             APROVE / REJECT
              DATABASE SHOULD STORE WHO YOU'VE APPROVED OR REJECTED
-             NEXT POTENTIAL USER IS SHOWN
-ITERATION 3: PENDING MATCHES ARE SHOWN FIRST
 ITERATION 4: TWO YESS ARE SHOWN ON DASHBOARD
 
 USER -----------Pair------------ USER
