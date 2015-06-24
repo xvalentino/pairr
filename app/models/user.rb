@@ -13,4 +13,20 @@ class User < ActiveRecord::Base
   def self.find_or_create_by_uid(uid)
     User.find_by(uid: uid) || User.new(uid: uid)
   end
+
+  def update_profile(data)
+    update_languages(data['language'])
+    self.update(description: data['user']['description'])
+    return true
+  end
+
+  def update_languages(data)
+    languages = data || {}
+    languages.each do |language|
+      begin 
+        self.languages << Language.find_by(name: language)
+      rescue ActiveRecord::RecordInvalid
+      end
+    end
+  end
 end

@@ -5,7 +5,11 @@ class SessionsController < ApplicationController
     req = request.env["omniauth.auth"]
     @user = User.find_or_create_by_auth(req)
     session[:user_id] = @user.id
-    redirect_to root_path, notice: "Logged in as #{@user.name}"
+    if current_user.description == nil || current_user.languages.empty?
+      redirect_to edit_user_path(@user)
+    else
+      redirect_to root_path, notice: "Logged in as #{@user.name}"
+    end
   end
 
   def destroy
