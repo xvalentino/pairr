@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :user_languages
   has_many :languages, through: :user_languages
   has_many :potential_matches, through: :pairs, class_name: 'User', foreign_key: 'potential_match_id'
+  validates :description, length: { maximum: 500 }
 
   def matches
     referenced_relationships = Pair.includes(:potential_match).where(potential_match_id: id).where(status: 2)
