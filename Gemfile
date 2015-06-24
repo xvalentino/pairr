@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'faker'
 gem 'materialize-sass'
 gem 'figaro'
 gem "omniauth-github"

@@ -1,1 +1,4 @@
-
+<%= link_to "Find Pairs", match_path %>
+<% @matches.each do |user| %>
+  <p> <%= user.name %></p>
+<% end %>
