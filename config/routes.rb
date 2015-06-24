@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'match/show'
+
   root to: 'dashboard#home'
   get '/logout', to: 'sessions#destroy'
   get 'login', to: 'sessions#show'
